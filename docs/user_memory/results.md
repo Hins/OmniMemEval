@@ -68,6 +68,23 @@ setup because of account/API access, service availability, benchmark support,
 or run-cost constraints. Partial or non-comparable runs are excluded rather than
 mixed into the reproduced result tables.
 
+## Hojo / MemoryOS Experimental Smoke Snapshot
+
+The following Hojo / MemoryOS V2 results are retained as an experimental smoke
+snapshot. They were produced with a self-hosted MemoryOS deployment and
+`deepseek-v4-flash` for answer generation and judging, rather than the shared
+model configuration listed above. Some runs also use reduced benchmark ranges.
+They are therefore **not** included in the reproduced `Result Summary` and must
+not be compared as leaderboard-equivalent scores.
+
+| Backend | LoCoMo | LongMemEval | BEAM 100K | BEAM 10M | PersonaMem v2 | HaluMem |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Hojo / MemoryOS (experimental smoke) | - | 57.14 | 67.74 | 56.58 | 54.84 | 47.56 |
+
+`-` denotes that no smoke result was retained for that benchmark. A standardized
+full LongMemEval run is in progress; only full runs using the shared evaluation
+configuration should be promoted into the reproduced result tables.
+
 ## LoCoMo
 
 LoCoMo evaluates long-conversation memory with multi-hop, temporal, and
