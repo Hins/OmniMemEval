@@ -61,7 +61,7 @@ the reproduced OmniMemEval scores.
 | MemoryLake | 72.49 | - | - | - | - | - |
 | Backboard.io | 22.40 | - | - | - | - | - |
 | MemOS | 88.83 | 89.20 | 66.87 | 56.75 | 40.58 | 80.91 |
-| Hojo / MemoryOS† | - | 57.14 | 67.74 | 56.58 | 54.84 | 47.56 |
+| Hojo / MemoryOS† |  93.3| 57.14 | 67.74 | 56.58 | 54.84 | 47.56 |
 
 A dash (`-`) means that a reproduced result is not included in this snapshot.
 For these missing cells, full runs were not completed under the same evaluation
