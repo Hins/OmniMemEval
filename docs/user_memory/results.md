@@ -71,7 +71,8 @@ mixed into the reproduced result tables.
 ## LoCoMo
 
 LoCoMo evaluates long-conversation memory with multi-hop, temporal, and
-open-domain question answering. 
+open-domain question answering. The reproduced evaluation excludes category 5
+adversarial questions and covers 1,540 questions.
 
 | Category | Count | Description |
 | --- | ---: | --- |
