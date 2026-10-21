@@ -21,7 +21,8 @@ documented setup or default parameters are welcome.
 
 ## Evaluation Setup
 
-All reproduced runs used the same baseline evaluation configuration:
+The baseline requested evaluation configuration is below. Contributor-run
+endpoint and model-resolution limitations are disclosed alongside their rows.
 
 | Component | Configuration |
 | --- | --- |
@@ -65,6 +66,22 @@ the reproduced OmniMemEval scores.
 | MemoryLake | 72.49 | - | - | - | - | - |
 | Backboard.io | 22.40 | - | - | - | - | - |
 | MemOS | 88.83 | 89.20 | 66.87 | 56.75 | 40.58 | 80.91 |
+| LCM-X | 78.83 | 87.00 | 71.84 | - | 33.96 | 81.68 |
+
+LCM-X rows are contributor-run: the LCM-X maintainers ran the unchanged pipeline
+and prompts on **2026-10-18** with OmniMemEval harness commit
+[`162640314863db64b5af62138b5b81776516d1ff`](https://github.com/electricsheephq/OmniMemEval/tree/162640314863db64b5af62138b5b81776516d1ff),
+using the `lcmx` adapter (LCM-X v0.28.0-rc1, executable code identical to
+v0.28.0, local fastembed `BAAI/bge-small-en-v1.5` embeddings, top-k 20).
+The [public evidence release and manifest archive](https://github.com/electricsheephq/OmniMemEval/releases/tag/lcmx-v0.28.0-results-20261018)
+has archive SHA-256 `af4eebcb0909a86b5eb7969c4f167967b0d53b17559e7855e1cff58255b2682a`.
+The template requests direct OpenAI dated models; the runs requested those
+models via OpenRouter, whose answer receipts resolve to `openai/gpt-4.1-mini`.
+Those receipts establish the reported model identifier and token usage, but do
+not establish the exact dated revision or equivalence to a direct OpenAI run;
+they also do not establish that the model differed. See
+[LCM-X provenance and the pinned PersonaMem v2 snapshot](./lcmx.md#result-provenance)
+for the complete input pin and evidence limitations. BEAM 10M has not been run.
 
 A dash (`-`) means that a reproduced result is not included in this snapshot.
 For these missing cells, full runs were not completed under the same evaluation
@@ -103,6 +120,7 @@ adversarial questions and covers 1,540 questions.
 | MemoryLake | cloud | 70.87 | 75.30 | 79.75 | 54.17 | 72.49 | 5,202 |
 | Backboard.io | cloud | 25.09 | 22.34 | 13.40 | 29.17 | 22.40 | 1,198 |
 | MemOS | cloud | 92.51 | 88.65 | 85.05 | 69.79 | 88.83 | 5,400 |
+| LCM-X | local/self-hosted | 84.30 | 66.31 | 79.75 | 64.58 | 78.83 | 1,659 |
 
 ### Published Reference Results
 
@@ -154,6 +172,7 @@ questions; it is not the unweighted mean of the six category percentages.
 | MemMachine | local/self-hosted | 75.71 | 96.43 | 83.33 | 55.64 | 39.85 | 75.64 | 63.60 | 2,803 |
 | mem9 | cloud | 95.71 | 94.64 | 56.67 | 77.44 | 62.41 | 85.90 | 78.00 | 3,805 |
 | MemOS | cloud | 100.00 | 100.00 | 100.00 | 89.47 | 78.95 | 84.62 | 89.20 | 4,151 |
+| LCM-X | local/self-hosted | 95.71 | 94.64 | 96.67 | 85.71 | 75.19 | 92.31 | 87.00 | 5,164 |
 
 ### Published Reference Results
 
@@ -198,6 +217,7 @@ covered, 0.5 for partially covered, and 0.0 for incorrect or missing evidence.
 | MemMachine | local/self-hosted | 64.80 +/- 37.62 | 5,413 | 51.90 +/- 40.46 | 5,448 |
 | mem9 | cloud | 65.75 +/- 38.92 | 5,372 | 57.30 +/- 39.03 | 4,947 |
 | MemOS | cloud | 66.87 +/- 37.37 | 1,636 | 56.75 +/- 39.17 | 1,558 |
+| LCM-X | local/self-hosted | 71.84 +/- 34.86 | 11,926 | - | - |
 
 ### Published Reference Results
 
@@ -240,6 +260,7 @@ the gold answer; repeated runs are averaged.
 | MemMachine | local/self-hosted | 28.19 | 45.04 | 32.22 | 28.44 | 29.75 | 32.46 | 38.60 | 34.14 | 1,988 |
 | mem9 | cloud | 32.28 | 22.90 | 32.57 | 34.50 | 25.05 | 38.27 | 33.33 | 30.76 | 2,045 |
 | MemOS | cloud | 33.80 | 57.82 | 32.57 | 35.66 | 36.59 | 39.40 | 39.23 | 40.58 | 1,908 |
+| LCM-X | local/self-hosted | 32.98 | 32.82 | 34.15 | 31.59 | 32.68 | 39.21 | 36.84 | 33.96 | 3,534 |
 
 ### Published Reference Results
 
@@ -278,6 +299,7 @@ multi-hop inference, and dynamic updates.
 | MemMachine | local/self-hosted | 20.38 | 97.42 | 34.72 | 45.31 | 26.77 | 11.11 | 47.02 | 1,093 |
 | mem9 | cloud | 54.56 | 94.20 | 68.79 | 80.16 | 70.71 | 38.89 | 72.80 | 893 |
 | MemOS | cloud | 69.03 | 91.30 | 86.48 | 83.51 | 74.24 | 55.00 | 80.91 | 1,187 |
+| LCM-X | local/self-hosted | 73.06 | 89.73 | 85.96 | 82.31 | 78.79 | 62.78 | 81.68 | 1,985 |
 
 ### Published Reference Results
 
