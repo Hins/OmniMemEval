@@ -68,9 +68,10 @@ Run: `hojo_locomo_full_max10k_20261012a`. Semantic retrieval used `top_k=20`,
 `candidate_limit=200`, `min_score=0`, and `max_tokens=10000`. Strict-fair mode
 disabled action-query expansion, multi-pass retrieval and assistant-response
 query expansion. The report records 1,540 answer calls and 1,540 judge calls.
-Mean answer-stage prompt/input tokens were **9,360.3**. A dataset revision/hash
-and corrected-answer-key flag were not retained; no answer-key correction is
-claimed.
+The retained report states a mean answer-stage prompt/input count of
+**9,360.3** tokens. The supporting token totals are not included, so the
+comparison table leaves `Context Tokens` as `-`. A dataset revision/hash and
+corrected-answer-key flag were not retained; no answer-key correction is claimed.
 
 [Per-question scores](./hojo_artifacts/locomo.jsonl).
 

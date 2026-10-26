@@ -139,12 +139,14 @@ adversarial questions and covers 1,540 questions.
 | past.dev | 95.01 | 93.26 | 93.46 | 75.00 | 93.12 | - | [past.dev benchmarks](https://past.dev/benchmarks) (community-corrected answer keys) |
 | CPersona (pro) | 88.70 | 78.01 | 83.18 | 63.54 | 84.03 | 4,441 | [CPersona run records](https://github.com/Cloto-dev/cpersona-omnimemeval-2.6.11) (this harness at `0b1ea8d`; the 1,540-question non-adversarial subset, categories 1–4; answers `gpt-4.1-mini-2025-04-14`, judge `gpt-4o-mini`) |
 | CPersona (lite) | 73.84 | 51.06 | 72.59 | 54.17 | 68.18 | 1,485 | [CPersona run records](https://github.com/Cloto-dev/cpersona-omnimemeval-2.6.11) (this harness at `0b1ea8d`; the 1,540-question non-adversarial subset, categories 1–4; answers `gpt-4.1-mini-2025-04-14`, judge `gpt-4o-mini`) |
-| Hojo MemoryEngine | 92.98 | 81.91 | 85.36 | 72.92 | 88.12 | 9,360.3 | [Hojo evaluation details: 1,540-question non-adversarial subset](./hojo_reference_results.md#locomo) |
+| Hojo MemoryEngine | 92.98 | 81.91 | 85.36 | 72.92 | 88.12 | - | [Hojo evaluation details: 1,540-question non-adversarial subset](./hojo_reference_results.md#locomo) |
 
 ## LongMemEval
 
 LongMemEval evaluates long-term interactive memory across sessions. The
 OmniMemEval public pipeline uses the cleaned LongMemEval-S data by default.
+The `Overall` score is the question-count-weighted mean across all 500
+questions; it is not the unweighted mean of the six category percentages.
 
 | Category | Count | Description |
 | --- | ---: | --- |
